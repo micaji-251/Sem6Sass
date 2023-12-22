@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>implementación de sass y nomenclatura y arquitectura de CSS</h1>
+
+        <nav class="navigation">
+            <ol class="navigation_list">
+                <li class="navigation_item"><a class="navigation_link" href="#">SASS</a></li>
+                <li class="navigation_item"><a class="navigation_link" href="#">Nomenclatura de CSS</a></li>
+                <li class="navigation_item"><a class="navigation_link" href="#">Arquitectura de CSS</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 class="section_title">SASS</h2>
+            <article class="section_article"></article>
+                <h3> Descripcion</h3>
+                <p>Un preprocesador es un lenguaje que parte de CSS (stylus, section), al compilarse se vuelve CSS, section no reconoce el navegador (solo reconoce HTML, CSS y JAVASCRIPT).</p>
+            <article class="section_article"></article>
+                <h3> Desventajas para CSS plano</h3>
+                <p>Escalabilidad: puede generar problemas de lectura</p>
+            <article class="section_article"></article>
+                <h3> Ventajas de sass</h3>
+                <p>Nos permite la modularisación y tiene gran posibilidad de soporte por su comunidad.</p>
+            
+            <section class="section_article">
+                <ul class="section_list">
+                    <li class="section_item">
+                        <h4>Uso de variables</h4>
+                        <p>Se nombran variables haciendo uso de un signo de $ dinero, este se coloca adelante de la variable</p>
+                        <p class="article_item_example"> $first-color:red;</p>
+                    </li>
+                    <li class="section_item">
+                        <h4>Anidamiento</h4>
+                        <p>Permite que en el codigo SCSS se pueda colocar una etiqueta dentro de otra</p>
+                        <p class="article_item_example"> .container{ width:300px; a{text_decoration:none;}}</p>
+                    </li>
+                    <li class="section_item">
+                        <h4>Nesting o Modularización</h4>
+                        <p>Permite que se divida el codigo SCSS en varios archivos parciales, estos se nombran con un _ adelante para que no generen un archivo de copilación independiente, se tiene que ir importando </p>
+                        <p class="article_item_example"> _menu.scss, se coloca en el principal @import "./module/menu.scss" para que funcione</p>
+                    
+                    </li>
+                </ul>
+            </section>
+        
+        
+        </section>
+
+        <section class="section">
+            <h2 class="section_title">Nomenclatura de CSS</h2>
+            <p> Uso de BEM (Bloque, Elemento, Modifier)</p>
+            <p>B - Bloque: es el nombre de la section que lo contiene</p>
+            <p>E - Elemento: es el nombre del elemento asociado que es parte, item (li), link(a), entre otros.</p>
+            <p>M - Modifier: se utiliza si el elemento tiene un cambio de estado a partir de una acción, esto se maneja con JAVASCRIPT</p>
+        </section>
+    
+        <section class="section">
+            <h2 class="section_title">Arquitectura de CSS</h2>
+            <p class="section_principaltext"> La arquitectura en CSS sigue usualmente la forma SMACSS, esta separa los estilos CSS en distintas carpetas:</p>
+            <ol class="arquitectura_list">
+
+
+                <li class="section_item">
+
+                    <h4>Base</h4>
+                    <p>esta carpeta contiene lo que son valores de reseteo para los distintos elementos, de esta forma de no tienen valor por defecto, reemplaza lo que es el *, *::after *::before{
+                        box-sizing:box-border;
+                        padding:0;
+                        margin:0;}</p>
+                    <a href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" target="_blank" >necolas.github.io/normalize.css/8.0.1/normalize.css</a>
+                
+                
+                </li>
+                <li class="section_item">
+                    <h4>Layout</h4>
+                    <p>en esta sección va todo lo que son contenedores. Iria especificaciones de estos no relacionados a font, sino a width o heigh, padding, margin. Para colocar grid a un componente.</p>
+                    <p class="article_item_example"> .container{
+
+                            max-width: 200px;
+                        
+                        }</p>
+            
+
+                </li>
+                <li class="section_item">
+                    <h4>module</h4>
+                    <p>en este apartado va todo los componentes de una pagina, las secciónes: header, footer, menu de navegación, cada una en una pagina scss</p>
+                
+            
+
+                </li>
+                <li class="section_item">
+                    <h4>state</h4>
+                    <p>en esta carpeta va todo los elementos que varian de estado con JAVASCRIPT a partir de alguna interacción. En el ejemplo colocamos lo que era un color diferente en el menu de navegación para la sección en la que estabamos.</p>
+                    
+                </li>
+                <li class="section_item">
+                    <h4>theme</h4>
+                    <p>va todo lo que sont font y colores</p>
+                    <p class="article_item_example">a{font-family:arial,helvetica,sans-serif;}</p>
+            
+
+                </li>
+            </ol>
+        </section>
+    </main>
+    
+</body>
+</html>
